@@ -2,8 +2,6 @@ cdoe// TODO: Include packages needed for this application
 const inquirer = require('inquirer')
 const fs= require("fs");
 const { error } = require('console');
-const { inherits } = require('util');
-
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -35,16 +33,6 @@ inquirer
 
 
 ])
-<<<<<<< HEAD
-.then((data, filename)=> {
-  const filename= `${data.name.join(' ')}.json`;
-  
-   fs.writeFile('README.md',JSON.stringify(data,null, '/t'),(err) => err ? console.log(err): console.log('success'))
-  
-}) 
-
-function init(){}
-=======
 ].then(data)
 
 
@@ -52,10 +40,12 @@ function init(){}
 function writeToFile(fileName, data) {
   fs.writeFile('README.md',questions,
   (err) => err ? console.log(err): console.log('success'))
->>>>>>> aa98afc3daa68c6e1a0c8d88d6e33b5f0461305e
 
-init()
-
+  }
 
 
+// TODO: Create a function to initialize app
+function init() {}
 
+// Function call to initialize app
+init();
