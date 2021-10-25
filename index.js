@@ -2,6 +2,8 @@
 const inquirer = require('inquirer')
 const fs= require("fs");
 const { error } = require('console');
+const { inherits } = require('util');
+
 
 // TODO: Create an array of questions for user input
 const questions = [
@@ -33,19 +35,17 @@ inquirer
 
 
 ])
-]
+.then((data, filename)=> {
+  const filename= `${data.name.join(' ')}.json`;
+  
+   fs.writeFile('README.md',JSON.stringify(data,null, '/t'),(err) => err ? console.log(err): console.log('success'))
+  
+}) 
+
+function init(){}
+
+init()
 
 
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  fs.writeFile('README.md',process.argv[2],questions,(err) => err ? console.log(err): console.log('success'))
 
-  }
-
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
 
