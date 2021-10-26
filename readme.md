@@ -1,8 +1,8 @@
- ### table of content 
+ ### Description 
 
  This app will allow you to create a dynamic Readme file using Node.js terminal### reponame 
 
- reponame:rberot
+ reponame:
 
  ### licenses 
 
@@ -14,8 +14,14 @@
 
  ### email 
 
- Email: fsdafa### questions 
+ Email: 
+
+### questions 
 
  if you have any questions please reach to me at 
 
- fsdafa or rberot
+  or 
+
+### Permission 
+
+ If you think your improvements will make the app better please merge

@@ -41,13 +41,14 @@ let path ='./readme.md'
   ]) 
   
   .then(function(response){
-    let licenseinfo= ''
-    $template += `### table of content \n\n This app will allow you to create a dynamic Readme file using Node.js terminal`
+    
+    $template += `### Description \n\n This app will allow you to create a dynamic Readme file using Node.js terminal`
     $template +=`### reponame \n\n reponame:${response.reponame}\n\n `
     $template +=`### licenses \n\n License usage: ${response.licenses}\n\n `
     $template +=`### gitusername \n\n Gitusername${response.gitusername}\n\n `
-    $template +=`### email \n\n Email: ${response.email}`
-    $template +=`### questions \n\n if you have any questions please reach to me at \n\n ${response.email} or ${response.reponame}`
+    $template +=`### email \n\n Email: ${response.email}\n\n`
+    $template +=`### questions \n\n if you have any questions please reach to me at \n\n ${response.email} or ${response.reponame}\n\n`
+    $template += `### Permission \n\n If you think your improvements will make the app better please merge`
 
 
     fs.writeFile(path,$template,function(err){
