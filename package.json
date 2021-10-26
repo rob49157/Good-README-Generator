@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/rob49157/professional_READme#readme",
   "dependencies": {
-    "inquirer": "^8.2.0"
+    "inquirer": "^8.2.0",
+    "markdown-js": "0.0.4"
   }
 }

@@ -3,7 +3,9 @@ const inquirer = require('inquirer')
 const fs= require("fs");
 const { error } = require('console');
 const util = require('util');
-const generateMarkdown = require('./generateMarkdown');
+let $template= ' '
+let path ='./readme.md'
+// const generateMarkdown = require('./generateMarkdown');
 
 
 
@@ -25,8 +27,6 @@ const generateMarkdown = require('./generateMarkdown');
         'perl [![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)'
         ,'SIL [![License: Open Font-1.1](https://img.shields.io/badge/License-OFL_1.1-lightgreen.svg)](https://opensource.org/licenses/OFL-1.1)'
         ,'ZLIB [![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)']
-
-
     },
     // github user name
     {type: 'input',
@@ -39,13 +39,36 @@ const generateMarkdown = require('./generateMarkdown');
     name: "email"}
 
   ]) 
- .then((data)=> {
-   const filename =`${data.name}.md`;
-   
-   fs.writeFile(filename,JSON.stringify(data,null, '\t'),(err)=>
-   
-   err? console.log(err): console.log(`succer`))
+  
+  .then(function(response){
+    let licenseinfo= ''
+    $template += `### table of content \n\n This app will allow you to create a dynamic Readme file using Node.js terminal`
+    $template +=`### reponame \n\n reponame:${response.reponame}\n\n `
+    $template +=`### licenses \n\n License usage: ${response.licenses}\n\n `
+    $template +=`### gitusername \n\n Gitusername${response.gitusername}\n\n `
+    $template +=`### email \n\n Email: ${response.email}`
+    $template +=`### questions \n\n if you have any questions please reach to me at \n\n ${response.email} or ${response.reponame}`
+
+
+    fs.writeFile(path,$template,function(err){
+      if (err){
+        console.log(err)
+      }
+    })
   })
+  
+
+
+
+
+  
+//  .then((data)=> {
+//    const filename =`${data.name.toLowercase().split('').join(' ')}.md`;
+   
+//    fs.writeFile(filename,JSON.stringify(data,null, '\t'),(err)=>
+   
+//    err? console.log(err): console.log(`success`))
+//   })
    
    
 
