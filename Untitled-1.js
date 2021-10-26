@@ -33,7 +33,7 @@ inquirer
 
 
 ])
-].then(data)
+].then()
 
 
 // TODO: Create a function to write README file
