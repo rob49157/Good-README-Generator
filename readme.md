@@ -2,9 +2,9 @@
 
  This app will allow you to create a dynamic Readme file using Node.js terminal 
 
- ### Reponame 
+ ### Repository 
 
- reponame: professional_readme
+ Repo-name: professional_readme
 
  ### Licenses 
 

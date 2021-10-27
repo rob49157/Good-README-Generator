@@ -46,7 +46,7 @@ let ZLIB ='[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey
   .then(function(response){
     
     $template += `### Description \n\n This app will allow you to create a dynamic Readme file using Node.js terminal \n\n `
-    $template +=`### Reponame \n\n reponame: ${response.reponame}\n\n `
+    $template +=`### Repository \n\n Repo-name: ${response.reponame}\n\n `
     $template +=`### Licenses \n\n License usage: ${response.licenses}\n\n `
     $template +=`### Gitusername \n\n Gitusername :${response.gitusername}\n\n `
     $template +=`### Email \n\n Email: ${response.email}\n\n`
