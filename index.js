@@ -4,7 +4,10 @@ const fs= require("fs");
 const { error } = require('console');
 const util = require('util');
 let $template= ' '
-let path ='./readme.md'
+let readme ='./readme.md'
+let perl ='[![License: Artistic-2.0](https://img.shields.io/badge/License-Perl-0298c3.svg)](https://opensource.org/licenses/Artistic-2.0)'
+let sil ='[![License: Open Font-1.1](https://img.shields.io/badge/License-OFL_1.1-lightgreen.svg)](https://opensource.org/licenses/OFL-1.1)'
+let ZLIB ='[![License: Zlib](https://img.shields.io/badge/License-Zlib-lightgrey.svg)](https://opensource.org/licenses/Zlib)'
 // const generateMarkdown = require('./generateMarkdown');
 
 
@@ -42,16 +45,16 @@ let path ='./readme.md'
   
   .then(function(response){
     
-    $template += `### Description \n\n This app will allow you to create a dynamic Readme file using Node.js terminal`
-    $template +=`### reponame \n\n reponame:${response.reponame}\n\n `
-    $template +=`### licenses \n\n License usage: ${response.licenses}\n\n `
-    $template +=`### gitusername \n\n Gitusername${response.gitusername}\n\n `
-    $template +=`### email \n\n Email: ${response.email}\n\n`
-    $template +=`### questions \n\n if you have any questions please reach to me at \n\n ${response.email} or ${response.reponame}\n\n`
-    $template += `### Permission \n\n If you think your improvements will make the app better please merge`
+    $template += `### Description \n\n This app will allow you to create a dynamic Readme file using Node.js terminal \n\n `
+    $template +=`### Reponame \n\n reponame: ${response.reponame}\n\n `
+    $template +=`### Licenses \n\n License usage: ${response.licenses}\n\n `
+    $template +=`### Gitusername \n\n Gitusername :${response.gitusername}\n\n `
+    $template +=`### Email \n\n Email: ${response.email}\n\n`
+    $template +=`### Questions \n\n if you have any questions please reach  me at: \n\n ${response.email} or find me on Github ${response.reponame}\n\n`
+    $template += `### Permission \n\n If you think your improvements will make the app better please free to doa branch merge`
 
 
-    fs.writeFile(path,$template,function(err){
+    fs.writeFile(readme,$template,function(err){
       if (err){
         console.log(err)
       }
@@ -62,15 +65,7 @@ let path ='./readme.md'
 
 
 
-  
-//  .then((data)=> {
-//    const filename =`${data.name.toLowercase().split('').join(' ')}.md`;
-   
-//    fs.writeFile(filename,JSON.stringify(data,null, '\t'),(err)=>
-   
-//    err? console.log(err): console.log(`success`))
-//   })
-   
+
    
 
 
